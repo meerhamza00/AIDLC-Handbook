@@ -33,6 +33,13 @@ The most critical transition is moving from **Chatting** to **Orchestrating**.
 - **Chatting:** "Can you write me a function that does X?" (Single turn, low agency).
 - **Orchestrating:** "Here is the project goal, the a-typical constraints, and the test suite. Create a plan, implement the core logic, run the tests, and notify me only when the build passes." (Multi-turn, high agency).
 
+### 🛠 Implementation Detail: The Agentic Triad
+Professional AIDLC does not use one AI; it uses a **Specialized Triad**. This prevents the "Echo Chamber" effect where an AI simply agrees with its own mistakes.
+
+1. **The Architect:** Strategic, structural, and constraint-focused.
+2. **The Coder:** Tactical, atomic, and implementation-focused.
+3. **The Reviewer:** Critical, security-conscious, and quality-focused.
+
 ### 🧪 The Lab: Mindset Shift
 **Exercise:** Take a task you did last week (e.g., "fixing a bug in the user login flow"). 
 Instead of thinking *"How do I fix this code?"*, think:

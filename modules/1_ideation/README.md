@@ -1,40 +1,47 @@
 # Module 1: Ideation & Requirement Synthesis
-## Transforming the "What" (Product Discovery)
+## Transforming the "What" (From Static Docs to Executable Blueprints)
 
-In the traditional PDLC, ideation is often a bottleneck of endless meetings, vague emails, and manually written PRDs (Product Requirement Documents) that are outdated the moment they are saved.
+In the traditional PDLC, ideation is a bottleneck of vague emails and static PRDs. In AIDLC, we treat requirements as **Input Data for Agents**.
 
 ### 1. The Contrast: Traditional vs. AI-Powered
 
 | Activity | Traditional Method | AI-Powered Method (AIDLC) |
 | :--- | :--- | :--- |
-| **Market Research** | Manual browsing, reading reports, interviews. | AI-driven synthesis of competitor reviews, social sentiment, and trend analysis. |
-| **User Personas** | "Imaginary" profiles based on generic assumptions. | **Synthetic Personas:** LLM-simulated users built from real data to "interview" and stress-test features. |
-| **Requirement Drafting** | Manual writing of User Stories and Acceptance Criteria. | **Rapid Prototyping of PRDs:** AI generates the first draft; human curates and refines the constraints. |
-| **Edge-Case Analysis** | Relying on the lead dev's experience to "spot" errors. | **Adversarial Prompting:** Asking AI to "act as a malicious user/edge-case generator" to find gaps in logic. |
+| **Market Research** | Manual browsing, reading reports. | AI-driven synthesis of competitor reviews and social sentiment. |
+| **User Personas** | Imaginary profiles. | **Synthetic Personas:** LLM-simulated users based on real data to "interview" and stress-test. |
+| **Requirement Drafting** | Manual writing of User Stories. | **Rapid Prototyping:** AI generates drafts; human curates constraints. |
+| **Edge-Case Analysis** | Relying on seniority. | **Adversarial Prompting:** AI acts as a "malicious user" to find logic gaps. |
 
-### 2. The AI-Powered Workflow: Step-by-Step
+### 🛠 Implementation: The Advanced a-la-carte Workflow
 
-#### Step A: Concept Expansion
-Instead of a brainstorming meeting, use a "Recursive Expansion" prompt.
-**The Loop:** Concept $\rightarrow$ AI expands into 5 directions $\rightarrow$ Human selects 1 $\rightarrow$ AI breaks that direction into 10 specific features.
+To implement this at a professional level, don't just "ask for a PRD." Use the **Recursive Expansion** method:
 
-#### Step B: Synthetic User Testing
-Before writing a single line of code, create a "Synthetic Panel."
-1. Define 3 distinct personas (e.g., "The Power User," "The Non-Tech Novice," "The Security Skeptic").
-2. Feed the product concept to the AI and ask: *"Based on these personas, what are the top 3 reasons they would HATE this product?"*
-3. Pivot the requirements based on this simulated friction.
+#### Step A: The-Concept-Squeeze (Sourcing)
+Feed the AI a broad idea and a "Sourcing Agent" prompt:
+> *"Analyze the current market for [IDEA]. Find 3 successful competitors and 3 failed attempts. Synthesize the 'Common Success Pattern' and the 'Fatal Error Pattern'. Provide a set of non-negotiable requirements to avoid the fatal errors."*
 
-#### Step C: The "Executable" PRD
-Stop writing PRDs as static documents. Write them as **Instruction Sets for Agents**.
-A modern PRD should include:
-- **The Core Objective:** A clear, unambiguous goal.
-- **Constraints:** Technical, legal, and design boundaries.
-- **Success Metrics:** How the AI can verify the feature is "done."
+#### Step B: The Synthetic Panel (Simulated Feedback)
+Create 3 distinct agent personas:
+1. **The Power User:** Demands efficiency and advanced shortcuts.
+2. **The Non-Tech Novice:** Demands extreme simplicity and guidance.
+3. **The Security Skeptic:** Demands transparency and data privacy.
+**The Loop:** Present the feature to all three $\rightarrow$ Ask them to debate the feature $\rightarrow$ Resolve the conflict as the Human Architect.
+
+#### Step C: The "Agentic" PRD (The Executable Blueprint)
+A modern PRD is not a document; it is a **Configuration File** for the Coder Agent. Every requirement must include:
+- **ID:** (e.g., REQ-01)
+- **The Objective:** Clear goal.
+- **Constraint:** "Must not use external library X," "Must run in <200ms."
+- **Verification Prompt:** "How would a QA agent prove this is done?"
+
+### ⚠️ Pitfalls & Mitigations
+- **The "Yes-Man" Effect:** AI tends to tell you your idea is great. 
+- **Mitigation:** Use **Adversarial Prompting**. Force the AI to act as a "Hater" or a "Competitor" to identify weaknesses.
 
 ### 🧪 The Lab: Requirement Synthesis
-**Exercise: The "Anti-PRD"**
-1. Write a simple 1-paragraph idea for a feature.
-2. Use this prompt: *"I have an idea for [FEATURE]. Act as a world-class Product Manager. Tell me why this is a bad idea, what similar products failed at, and 5 critical edge cases I have completely ignored."*
-3. Use the output to refine your requirements.
+**Exercise: The Adversarial Persona**
+1. Write a 1-paragraph feature idea.
+2. Prompt: *"Act as a world-class Product Manager who hates this idea. Tell me exactly why it will fail, who will find it confusing, and 5 edge cases that will crash the system if not handled. Be brutal."*
+3. Refine your PRD based on the "failures."
 
-**Conclusion:** In AIDLC, the goal of ideation isn't to "get it right" on the first page, but to **rapidly simulate failure** so that the eventual build is bulletproof.
+**Conclusion:** The goal of ideation in AIDLC is to **simulate failure as early as possible**, moving the risk from production back to the prompt.
